@@ -11,8 +11,8 @@ public final class ActivityFocusWatcher extends Thread {
 
 	boolean lastState = false;
 
-	public static interface OnFocusChangeListener {
-		public abstract void onFocusChanged(boolean hasFocus);
+	public  interface OnFocusChangeListener {
+		 void onFocusChanged(boolean hasFocus);
 	}
 
 	public ActivityFocusWatcher(Activity activity) {
@@ -35,20 +35,20 @@ public final class ActivityFocusWatcher extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		
 		while (run) {
 			checkActivityFocusState();
 		}
 	}
 
 	private void checkActivityFocusState() {
-		// TODO Auto-generated method stub
+		
 		final boolean newState = mActivity.hasWindowFocus();
 		if (newState != lastState && mCallBack != null && run) {
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
+					
 					if (mCallBack != null)
 						mCallBack.onFocusChanged(newState);
 				}
@@ -59,7 +59,7 @@ public final class ActivityFocusWatcher extends Thread {
 
 	@Override
 	public synchronized void start() {
-		// TODO Auto-generated method stub
+		
 		run = true;
 		super.start();
 	}

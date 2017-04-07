@@ -1,6 +1,6 @@
 package com.istat.cinetpay.helpers;
 
-import istat.android.network.util.Connectivity;
+import istat.android.network.utils.Connectivity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -10,14 +10,14 @@ import android.widget.Toast;
 
 import com.istat.cinetcore.cinetpay.sdk.MerchantService;
 import com.istat.cinetcore.cinetpay.sdk.PaymentResponse;
-import com.istat.cinetcore.cinetpay.sdk.Purchasable;
+import com.istat.cinetcore.cinetpay.sdk.interfaces.Purchasable;
 import com.istat.cinetcore.cinetpay.sdk.Purchase;
 import com.istat.cinetcore.cinetpay.sdk.PurchaseTransaction;
 import com.istat.cinetcore.cinetpay.sdk.plugins.SmsPayPlugin;
 import com.istat.cinetcore.cinetpay.sdk.process.CinetPay.PayCallBack;
 import com.istat.cinetcore.cinetpay.sdk.process.CinetPay.TransactionCheckCallBack;
-import com.istat.cinetcore.cinetpay.sdk.ui.CinetPayUI;
-import com.istat.cinetcore.cinetpay.sdk.ui.PayPlugin;
+import com.istat.cinetcore.cinetpay.sdk.uis.CinetPayUI;
+import com.istat.cinetcore.cinetpay.sdk.uis.PayPlugin;
 
 public abstract class CinetPayBilling implements PayCallBack,
         TransactionCheckCallBack, ActivityFocusWatcher.OnFocusChangeListener {
